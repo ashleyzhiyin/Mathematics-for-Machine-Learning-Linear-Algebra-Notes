@@ -95,7 +95,7 @@ $$
 
 ### 1.1.3 Matrix Multiplication Example
 
-Let $ A $ be a $ 2 \times 3 $ matrix, and $ B $ be a $ 3 \times 2 $ matrix:
+Let $A$ be a $ 2 \times 3 $ matrix, and $ B $ be a $ 3 \times 2 $ matrix:
 
 $$
 A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}, \quad
