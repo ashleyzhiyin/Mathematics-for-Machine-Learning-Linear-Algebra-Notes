@@ -604,7 +604,7 @@ $$
 $$,
 
 $$
-\Sigma^T \Sigma = \begin{bmatrix}\sigma_1^2 & 0 & 0 \\ 0 & \sigma_2^2 & 0 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} \lambda_1 & 0 & 0 \\ 0& \lambda_2 & 0 \\ 0 & 0 & 0\end{bmatrix}
+\Sigma^T \Sigma = \begin{bmatrix}\sigma_1^2 & 0 & 0 \\\\ 0 & \sigma_2^2 & 0 \\\\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} \lambda_1 & 0 & 0 \\\\ 0& \lambda_2 & 0 \\\\ 0 & 0 & 0\end{bmatrix}
 $$
 
  i.e., $AA^T$ and $A^TA$ have the same non-zero eigenvalues.
