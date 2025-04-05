@@ -1,33 +1,34 @@
 import re
 
 def clean_inline_math(content: str) -> str:
-    # Trim leading/trailing spaces inside inline math
+    # Just strip leading/trailing space inside inline math
     return f"${content.strip()}$"
 
 def clean_display_math(content: str) -> str:
-    # Normalize `\\` to have exactly one newline after
-    # BUT preserve existing line structure
-    def fix_backslashes(line):
-        # Only fix `\\` followed by anything that’s not a newline
-        return re.sub(r'\\\\(?!\s*\n)', r'\\\\\n', line)
+    # Fix only the \\ that are not followed by a newline
+    def fix_backslashes(match):
+        # If already followed by newline, leave it
+        if match.group(0).endswith('\n'):
+            return match.group(0)
+        return '\\\\\n'
 
-    # Split into lines and trim spaces (keep empty lines)
-    lines = content.splitlines()
-    cleaned_lines = [fix_backslashes(line.rstrip()) for line in lines]
+    # Fix only those \\ that are NOT followed by a newline already
+    content = re.sub(r'\\\\(?!\s*\n)', fix_backslashes, content)
 
-    return "$$" + "\n".join(cleaned_lines) + "$$"
+    # Trim spaces at start/end of the entire block (but NOT per line)
+    return f"$${content.strip()}$$"
 
 def clean_math_blocks(text: str) -> str:
     result = []
-    pos = 0
+    last_pos = 0
 
-    # Pattern matches either display or inline math
+    # Match inline ($...$) and display ($$...$$) math blocks
     pattern = re.compile(
         r"(?P<display>\$\$(?:.|\n)*?\$\$)|(?P<inline>\$(?!\$)(?:\\\$|[^\n\$])+\$)"
     )
 
     for match in pattern.finditer(text):
-        result.append(text[pos:match.start()])
+        result.append(text[last_pos:match.start()])
         raw = match.group(0)
 
         if match.group("display"):
@@ -39,9 +40,9 @@ def clean_math_blocks(text: str) -> str:
             cleaned = clean_inline_math(inner)
             result.append(cleaned)
 
-        pos = match.end()
+        last_pos = match.end()
 
-    result.append(text[pos:])
+    result.append(text[last_pos:])
     return ''.join(result)
 
 # Example usage
