@@ -1,6 +1,6 @@
 import re
 
-def convert_markdown(math_text):
+def clean_math_blocks(math_text):
     # Case 1: If the double dollar block is indented, unindent it.
     math_text = re.sub(r'^\s*\$\$(.*?)\$\$', r'$$\1$$', math_text, flags=re.DOTALL)
 
