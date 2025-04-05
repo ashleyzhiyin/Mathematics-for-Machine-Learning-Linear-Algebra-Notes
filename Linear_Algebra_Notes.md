@@ -594,8 +594,11 @@ $$q_1 = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\
 $$Q = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
  -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}$$ 
  
- Its transpose is: $$Q^T = \begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
- \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}$$ 
+ Its transpose is: 
+ $$
+ Q^T = \begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}
+ $$ 
  
  The diagonal matrix: $$S = \begin{bmatrix} 3 & 0 \\
  0 & 1 \end{bmatrix}$$ 
