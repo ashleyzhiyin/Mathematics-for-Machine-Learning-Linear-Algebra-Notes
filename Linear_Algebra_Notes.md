@@ -600,7 +600,17 @@ i.e., the column vectors of $U$ are the eigenvectors of $AA^T$.
 - Similarly, the column vector of $V$ are the eigenvectors of $A^T A$.
 
 $$
-\Sigma = \begin{bmatrix}\sigma_1 & 0 & 0 \\ 0 & \sigma_2 & 0 \end{bmatrix} \Rightarrow \Sigma \Sigma^T = \begin{bmatrix} \sigma_1^2 & 0 \\ 0 & \sigma_2^2 \end{bmatrix} = \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{bmatrix}
+\Sigma = 
+\begin{bmatrix}\sigma_1 & 0 & 0 \\
+ 0 & \sigma_2 & 0 
+ \end{bmatrix} \Rightarrow \Sigma \Sigma^T = 
+ \begin{bmatrix} 
+ \sigma_1^2 & 0 \\ 
+ 0 & \sigma_2^2 \end{bmatrix} = 
+ \begin{bmatrix} 
+ \lambda_1 & 0 \\
+  0 & \lambda_2 
+  \end{bmatrix}
 $$,
 
 $$
