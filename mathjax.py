@@ -1,6 +1,6 @@
 import re
 
-def clean_math_blocks(math_text):
+def convert_markdown(math_text):
     # Case 1: If the double dollar block is indented, unindent it.
     math_text = re.sub(r'^\s*\$\$(.*?)\$\$', r'$$\1$$', math_text, flags=re.DOTALL)
 
@@ -8,7 +8,8 @@ def clean_math_blocks(math_text):
     math_text = re.sub(r'\$\$(.*?)\$\$', r'\n$$\1$$\n', math_text, flags=re.DOTALL)
 
     # Case 3: If there are spaces between single dollar sign and the math, remove them.
-    math_text = re.sub(r'\$ (\S.*?) \$', r'$\1$', math_text)
+    # Note: This won't interfere with spaces outside the math expressions
+    math_text = re.sub(r'(\$) (\S.*?) (\$)', r'\1\2\3', math_text)
 
     # Case 4: If there are extra line breaks inside the double dollar block, remove them.
     math_text = re.sub(r'\$\$(.*?)\$\$', lambda m: '$$\n' + re.sub(r'\n+', '\n', m.group(1).strip()) + '\n$$', math_text, flags=re.DOTALL)
