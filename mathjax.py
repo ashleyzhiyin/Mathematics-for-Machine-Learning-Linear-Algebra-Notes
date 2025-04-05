@@ -1,5 +1,6 @@
 import re
 
+
 def clean_inline_math(content: str) -> str:
     return f"${content.strip()}$"
 
@@ -31,12 +32,15 @@ def clean_math_blocks(text: str) -> str:
         raw = match.group(0)
         cleaned = raw
 
+        # Handle the case when there's no newline before $$ (add one)
         if match.group("display"):
+            if not before.endswith('\n'):
+                before += '\n'  # Add linebreak before display math
+
             # Remove indent before display math if it follows a linebreak
             before = re.sub(r'([^\S\r\n]*)$', '', before)  # remove trailing spaces
             if before.endswith('\n'):
-                # drop indent on same line as $$ starts
-                before = re.sub(r'(\n)[ \t]+$', r'\1', before)
+                before = re.sub(r'(\n)[ \t]+$', r'\1', before)  # remove indent after linebreak
 
             inner = raw[2:-2]
             cleaned = clean_display_math(inner)
@@ -50,7 +54,6 @@ def clean_math_blocks(text: str) -> str:
 
     result.append(text[last_pos:])
     return ''.join(result)
-
 
 # Example usage
 if __name__ == "__main__":
