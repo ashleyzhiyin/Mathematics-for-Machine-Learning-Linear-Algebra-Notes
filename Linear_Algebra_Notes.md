@@ -24,7 +24,8 @@ For example, a $2 \times 3$ matrix:
 
 $$
 M= \begin{bmatrix} 
-60 & 98 & 42 \\ 170 & 16 & 14 
+60 & 98 & 42 \\
+ 170 & 16 & 14 
 \end{bmatrix}
 $$
 
@@ -41,51 +42,67 @@ $$
 
 1. **Square Matrix**: Number of rows = number of columns.
 
-$$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$$
+$$A = \begin{bmatrix} 1 & 2 \\
+ 3 & 4 \end{bmatrix}$$
 
 2. **Zero Matrix**: All elements are zero.
 
-$$A = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$$
+$$A = \begin{bmatrix} 0 & 0 \\
+ 0 & 0 \end{bmatrix}$$
 
 3. **Identity Matrix**: Square matrix with ones on the diagonal.
 
-$$I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$$
+$$I = \begin{bmatrix} 1 & 0 \\
+ 0 & 1 \end{bmatrix}$$
 
 ### 1.1.2 Matrix Operations
 
 1. **Addition**: Only possible for matrices of the same size.
 
 $$
-   A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, 
-   B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
+   A = \begin{bmatrix} 1 & 2 \\
+ 3 & 4 \end{bmatrix}, 
+   B = \begin{bmatrix} 5 & 6 \\
+ 7 & 8 \end{bmatrix}
 $$
 
-$$A + B = \begin{bmatrix} 6 & 8 \\ 10 & 12 \end{bmatrix}$$
+$$A + B = \begin{bmatrix} 6 & 8 \\
+ 10 & 12 \end{bmatrix}$$
 
 2. **Multiplication by Scalar**: Each element of the matrix is multiplied by a constant.
 
-$$2 \times \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 2 & 4 \\ 6 & 8 \end{bmatrix}$$
+$$2 \times \begin{bmatrix} 1 & 2 \\
+ 3 & 4 \end{bmatrix} = \begin{bmatrix} 2 & 4 \\
+ 6 & 8 \end{bmatrix}$$
 
 3. **Matrix Multiplication**: Number of columns in the first matrix must equal the number of rows in the second.
 
 $$
-   A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, 
-   B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
+   A = \begin{bmatrix} 1 & 2 \\
+ 3 & 4 \end{bmatrix}, 
+   B = \begin{bmatrix} 5 & 6 \\
+ 7 & 8 \end{bmatrix}
 $$
 
-$$A \times B = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}$$
+$$A \times B = \begin{bmatrix} 19 & 22 \\
+ 43 & 50 \end{bmatrix}$$
 
 4. **Transpose**: Flip rows and columns.
 
-$$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad A^T = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}$$
+$$A = \begin{bmatrix} 1 & 2 \\
+ 3 & 4 \end{bmatrix}, \quad A^T = \begin{bmatrix} 1 & 3 \\
+ 2 & 4 \end{bmatrix}$$
 
 ### 1.1.3 Matrix Multiplication Example
 
 Let $A$ be a $2 \times 3$ matrix, and $B$ be a $3 \times 2$ matrix:
 
 $$
-A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}, \quad
-B = \begin{bmatrix} 7 & 8 \\ 9 & 10 \\ 11 & 12 \end{bmatrix}
+A = \begin{bmatrix} 1 & 2 & 3 \\
+ 4 & 5 & 6 \end{bmatrix}, \quad
+B = \begin{bmatrix} 7 & 8 \\
+ 9 & 10 \\
+ 11 & 12 \end{bmatrix}
 $$
 
 Since the number of columns in $A$ (3) is equal to the number of rows in $B$ (3), we can multiply these matrices. The result will be a $2 \times 2$ matrix $C$, where each element of $C$ is calculated as:
@@ -108,7 +125,8 @@ $$
 
 Thus, the product of matrices $A$ and $B$ is:
 
-$$C = \begin{bmatrix} 58 & 64 \\ 139 & 154 \end{bmatrix}$$
+$$C = \begin{bmatrix} 58 & 64 \\
+ 139 & 154 \end{bmatrix}$$
 
 ---
 
@@ -203,7 +221,10 @@ d & e & f \\
 g & h & i
 \end{bmatrix}
 $$The determinant is calculated as:$$
-\text{det}(A) = a \begin{vmatrix} e & f \\ h & i \end{vmatrix} - b \begin{vmatrix} d & f \\ g & i \end{vmatrix} + c \begin{vmatrix} d & e \\ g & h \end{vmatrix}
+\text{det}(A) = a \begin{vmatrix} e & f \\
+ h & i \end{vmatrix} - b \begin{vmatrix} d & f \\
+ g & i \end{vmatrix} + c \begin{vmatrix} d & e \\
+ g & h \end{vmatrix}
 $$
 
 For larger matrices, the determinant can be computed recursively using cofactor expansion.
@@ -347,9 +368,12 @@ Imagine you are observing a vector, represented by a set of coordinates in a par
 Let us consider the following vector and bases:
 
 $$
-\mathbf{v} = \begin{bmatrix} 5 \\ -1 \end{bmatrix}, \quad 
-\mathbf{b_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad 
-\mathbf{b_2} = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\mathbf{v} = \begin{bmatrix} 5 \\
+ -1 \end{bmatrix}, \quad 
+\mathbf{b_1} = \begin{bmatrix} 1 \\
+ 1 \end{bmatrix}, \quad 
+\mathbf{b_2} = \begin{bmatrix} 1 \\
+ -1 \end{bmatrix}
 $$
 
 To express $\mathbf{v}$ in the new coordinate system defined by $\mathbf{b_1}$ and $\mathbf{b_2}$, we need to compute the projection of $\mathbf{v}$ onto both $\mathbf{b_1}$ and $\mathbf{b_2}$.
@@ -370,7 +394,9 @@ $$\mathbf{b_1} \cdot \mathbf{b_1} = 1^2 + 1^2 = 2$$
 
 Now compute the projection:
 
-$$\text{proj}_{\mathbf{b_1}}(\mathbf{v}) = \frac{4}{2} \mathbf{b_1} = 2 \times \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 2 \\ 2 \end{bmatrix}$$
+$$\text{proj}_{\mathbf{b_1}}(\mathbf{v}) = \frac{4}{2} \mathbf{b_1} = 2 \times \begin{bmatrix} 1 \\
+ 1 \end{bmatrix} = \begin{bmatrix} 2 \\
+ 2 \end{bmatrix}$$
 
 1. Similarly, the projection of $\mathbf{v}$ onto $\mathbf{b_2}$ is:
 
@@ -384,7 +410,9 @@ $$\mathbf{b_2} \cdot \mathbf{b_2} = 1^2 + (-1)^2 = 2$$
 
 Now compute the projection:
 
-$$\text{proj}_{\mathbf{b_2}}(\mathbf{v}) = \frac{6}{2} \mathbf{b_2} = 3 \times \begin{bmatrix} 1 \\ -1 \end{bmatrix} = \begin{bmatrix} 3 \\ -3 \end{bmatrix}$$
+$$\text{proj}_{\mathbf{b_2}}(\mathbf{v}) = \frac{6}{2} \mathbf{b_2} = 3 \times \begin{bmatrix} 1 \\
+ -1 \end{bmatrix} = \begin{bmatrix} 3 \\
+ -3 \end{bmatrix}$$
 
 ### 4.1.1 New Coordinates
 
@@ -394,7 +422,10 @@ $$\mathbf{v} = x \mathbf{b_1} + y \mathbf{b_2}$$
 
 Where $x$ and $y$ are the coefficients that we need to solve for. These coefficients are simply the projections we calculated earlier:
 
-$$\mathbf{v} = \begin{bmatrix} 2 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ -3 \end{bmatrix} = \begin{bmatrix} 5 \\ -1 \end{bmatrix}$$
+$$\mathbf{v} = \begin{bmatrix} 2 \\
+ 2 \end{bmatrix} + \begin{bmatrix} 3 \\
+ -3 \end{bmatrix} = \begin{bmatrix} 5 \\
+ -1 \end{bmatrix}$$
 
 Thus, the new coordinates of $\mathbf{v}$ in the basis defined by $\mathbf{b_1}$ and $\mathbf{b_2}$ are:
 
@@ -450,13 +481,15 @@ R(\theta) = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-When this matrix is multiplied by a vector $\mathbf{v} = \begin{bmatrix} x \\ y \end{bmatrix}$, it rotates the vector by $\theta$ degrees:
+When this matrix is multiplied by a vector $\mathbf{v} = \begin{bmatrix} x \\
+ y \end{bmatrix}$, it rotates the vector by $\theta$ degrees:
 
 $$
 \mathbf{v}' = R(\theta) \cdot \mathbf{v} = \begin{bmatrix} 
 \cos\theta & -\sin\theta \\
 \sin\theta & \cos\theta 
-\end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
+\end{bmatrix} \begin{bmatrix} x \\
+ y \end{bmatrix}
 $$This results in:$$
 \mathbf{v}' = \begin{bmatrix} 
 x\cos\theta - y\sin\theta \\
@@ -524,37 +557,48 @@ $$
    c & d - \lambda
    \end{bmatrix} = 0
 $$3. **Next, consider the matrix equation:**$$
-   (A - \lambda I) \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+   (A - \lambda I) \begin{bmatrix} v_1 \\
+ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\
+ 0 \end{bmatrix}
 $$
 
    The result gives the eigenvectors $v_1, v_2$.
 
 ---
 ## Matrix Diagonalization
-Given a symmetric matrix: $$A = QSQ^T$$ where: $$A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}$$ is a symmetric matrix. 
+Given a symmetric matrix: $$A = QSQ^T$$ where: $$A = \begin{bmatrix} 2 & 1 \\
+ 1 & 2 \end{bmatrix}$$ is a symmetric matrix. 
 
 **1. Eigenvalue and Eigenvectors 
 
 The eigenvalues and corresponding eigenvectors are: 
-$$\lambda_1 = 1, \quad v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$$ 
-$$\lambda_2 = 3, \quad v_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}$$ 
+$$\lambda_1 = 1, \quad v_1 = \begin{bmatrix} 1 \\
+ 1 \end{bmatrix}$$ 
+$$\lambda_2 = 3, \quad v_2 = \begin{bmatrix} -1 \\
+ 1 \end{bmatrix}$$ 
 - According to **Theorem 1**: 
  If $A$ is a symmetric matrix, then any two eigenvectors from different eigenspaces are orthogonal. 
  
  **Normalization of Eigenvectors**
 To normalize a vector, we compute its length (or norm), which is given by:
 $$\| v \| = \sqrt{| v_1 |^2 + | v_2 |^2}$$
-For example, for the vector $v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$:
+For example, for the vector $v_1 = \begin{bmatrix} 1 \\
+ 1 \end{bmatrix}$:
 $$\| v_1 \| = \sqrt{1^2 + 1^2} = \sqrt{2}$$
  The normalized vectors are:
-$$q_1 = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad q_2 = \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\ 1 \end{bmatrix}$$ 
+$$q_1 = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\
+ 1 \end{bmatrix}, \quad q_2 = \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\
+ 1 \end{bmatrix}$$ 
  
  **Constructing the orthogonal matrix** $Q$: 
-$$Q = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}$$ 
+$$Q = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}$$ 
  
- Its transpose is: $$Q^T = \begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}$$ 
+ Its transpose is: $$Q^T = \begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}$$ 
  
- The diagonal matrix: $$S = \begin{bmatrix} 3 & 0 \\ 0 & 1 \end{bmatrix}$$ 
+ The diagonal matrix: $$S = \begin{bmatrix} 3 & 0 \\
+ 0 & 1 \end{bmatrix}$$ 
  
  Thus, the decomposition of $A$: $$A = Q S Q^T$$ represents a simple scaling transformation with a diagonal matrix.
 
@@ -611,9 +655,7 @@ $$
  \lambda_1 & 0 \\
   0 & \lambda_2 
   \end{bmatrix}
-$$,
-
-$$
+$$,$$
 \Sigma^T \Sigma = 
  \begin{bmatrix}\sigma_1^2 & 0 & 0 \\
  0 & \sigma_2^2 & 0 \\
