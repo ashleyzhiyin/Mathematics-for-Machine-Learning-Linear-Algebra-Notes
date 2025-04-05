@@ -1,49 +1,56 @@
 import re
 
 def clean_inline_math(content: str) -> str:
-    # Just strip leading/trailing space inside inline math
     return f"${content.strip()}$"
 
 def clean_display_math(content: str) -> str:
-    # Fix only the \\ that are not followed by a newline
+    # Fix \\ not followed by newline
     def fix_backslashes(match):
-        # If already followed by newline, leave it
         if match.group(0).endswith('\n'):
             return match.group(0)
         return '\\\\\n'
 
-    # Fix only those \\ that are NOT followed by a newline already
     content = re.sub(r'\\\\(?!\s*\n)', fix_backslashes, content)
 
-    # Trim spaces at start/end of the entire block (but NOT per line)
+    # Trim spaces at start and end (not per line)
     return f"$${content.strip()}$$"
 
 def clean_math_blocks(text: str) -> str:
     result = []
     last_pos = 0
 
-    # Match inline ($...$) and display ($$...$$) math blocks
+    # Matches inline ($...$) and display ($$...$$)
     pattern = re.compile(
         r"(?P<display>\$\$(?:.|\n)*?\$\$)|(?P<inline>\$(?!\$)(?:\\\$|[^\n\$])+\$)"
     )
 
     for match in pattern.finditer(text):
-        result.append(text[last_pos:match.start()])
+        # Text before this match
+        before = text[last_pos:match.start()]
+
         raw = match.group(0)
+        cleaned = raw
 
         if match.group("display"):
+            # Remove indent before display math if it follows a linebreak
+            before = re.sub(r'([^\S\r\n]*)$', '', before)  # remove trailing spaces
+            if before.endswith('\n'):
+                # drop indent on same line as $$ starts
+                before = re.sub(r'(\n)[ \t]+$', r'\1', before)
+
             inner = raw[2:-2]
             cleaned = clean_display_math(inner)
-            result.append(cleaned)
         elif match.group("inline"):
             inner = raw[1:-1]
             cleaned = clean_inline_math(inner)
-            result.append(cleaned)
 
+        result.append(before)
+        result.append(cleaned)
         last_pos = match.end()
 
     result.append(text[last_pos:])
     return ''.join(result)
+
 
 # Example usage
 if __name__ == "__main__":
