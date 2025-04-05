@@ -10,19 +10,20 @@
 A **matrix** is a rectangular array of numbers arranged in rows and columns.
 
 
+
+
 $$
 A = \begin{bmatrix}
 a_{11} & a_{12} & \dots & a_{1n} \\
-
 a_{21} & a_{22} & \dots & a_{2n} \\
-
 \vdots & \vdots & \ddots & \vdots \\
-
 a_{m1} & a_{m2} & \dots & a_{mn}
 \end{bmatrix}
 $$This is an$m \times n$ matrix.
 
 For example, a $2 \times 3$ matrix:
+
+
 
 
 $$
@@ -46,6 +47,8 @@ $$
 1. **Square Matrix**: Number of rows = number of columns.
 
    
+
+
 $$
 A = \begin{bmatrix} 1 & 2 \\
 3 & 4 \end{bmatrix}
@@ -62,6 +65,8 @@ $$
 1. **Addition**: Only possible for matrices of the same size.
 
    
+
+
 $$
 A = \begin{bmatrix} 1 & 2 \\
 3 & 4 \end{bmatrix},
@@ -93,6 +98,8 @@ $$
 Let $A$ be a $2 \times 3$ matrix, and $B$ be a $3 \times 2$ matrix:
 
 
+
+
 $$
 A = \begin{bmatrix} 1 & 2 & 3 \\
 4 & 5 & 6 \end{bmatrix}, \quad
@@ -102,18 +109,15 @@ B = \begin{bmatrix} 7 & 8 \\
 $$Since the number of columns in$ A $(3) is equal to the number of rows in$ B $(3), we can multiply these matrices. The result will be a$ 2 \times 2 $matrix$ C $, where each element of$ C $is calculated as:$$
 C = A \times B = \begin{bmatrix}
 (1 \times 7 + 2 \times 9 + 3 \times 11) & (1 \times 8 + 2 \times 10 + 3 \times 12) \\
-
 (4 \times 7 + 5 \times 9 + 6 \times 11) & (4 \times 8 + 5 \times 10 + 6 \times 12)
 \end{bmatrix}
 $$Calculating each element:$$
 C = \begin{bmatrix}
 7 + 18 + 33 & 8 + 20 + 36 \\
-
 28 + 45 + 66 & 32 + 50 + 72
 \end{bmatrix}
 = \begin{bmatrix}
 58 & 64 \\
-
 139 & 154
 \end{bmatrix}
 $$Thus, the product of matrices$ A $and$ B $is:$$
@@ -139,20 +143,18 @@ $$
 Consider the system of equations:
 
 
+
+
 $$
 \begin{aligned}
 x + 2y + 3z &= 9 \\
-
 2x + 3y + z &= 8 \\
-
 3x + y + 2z &= 7
 \end{aligned}
 $$The augmented matrix is:$$
 \begin{bmatrix}
 1 & 2 & 3 & | & 9 \\
-
 2 & 3 & 1 & | & 8 \\
-
 3 & 1 & 2 & | & 7
 \end{bmatrix}
 $$
@@ -166,12 +168,12 @@ Applying Gaussian elimination, we perform row operations:
 After forward elimination:
 
 
+
+
 $$
 \begin{bmatrix}
 1 & 2 & 3 & | & 9 \\
-
 0 & -1 & -5 & | & -10 \\
-
 0 & -5 & -7 & | & -20
 \end{bmatrix}
 $$
@@ -182,12 +184,12 @@ $$
 After forward elimination:
 
 
+
+
 $$
 \begin{bmatrix}
 1 & 2 & 3 & | & 9 \\
-
 0 & -1 & -5 & | & -10 \\
-
 0 & 0 & 18 & | & 30
 \end{bmatrix}
 $$From here, back-substitution can be used to solve for$ x, y, z $.$$x = \frac{2}{3}, \quad y = \frac{5}{3}, \quad z = \frac{5}{3}$$
@@ -204,18 +206,17 @@ The determinant of a square matrix is a scalar value that can be computed from i
 For a $2 \times 2$ matrix:
 
 
+
+
 $$
 A = \begin{bmatrix}
 a & b \\
-
 c & d
 \end{bmatrix}
 $$The determinant is given by:$$\text{det}(A) = ad - bc$$For a$3 \times 3$matrix:$$
 A = \begin{bmatrix}
 a & b & c \\
-
 d & e & f \\
-
 g & h & i
 \end{bmatrix}
 $$The determinant is calculated as:$$
@@ -232,11 +233,15 @@ For larger matrices, the determinant can be computed recursively using cofactor 
 1. **Multiplicative Property**: If $A$ and $B$ are square matrices of the same size, then:
 
    
+
+
 $$\text{det}(AB) = \text{det}(A) \cdot \text{det}(B)$$2. **Invertibility**: A matrix is invertible if and only if its determinant is non-zero. That is, a matrix$A$is invertible if:$$\text{det}(A) \neq 0$$3. **Determinant of Transpose**: The determinant of the transpose of a matrix is the same as the determinant of the original matrix:$$\text{det}(A^T) = \text{det}(A)$$
 
 ## 2.2 Matrix Inverses
 
 A matrix $A$ is said to have an inverse, denoted as $A^{-1}$, **if and only if it is square and its determinant is non-zero.** The inverse of a matrix satisfies the following property:
+
+
 
 
 $$A \cdot A^{-1} = A^{-1} \cdot A = I$$Where$I$is the identity matrix of the same size as$A$.
@@ -248,6 +253,8 @@ $$A \cdot A^{-1} = A^{-1} \cdot A = I$$Where$I$is the identity matrix of the sam
 For a $1 \times 1$ matrix $A=(a)$:
 
 
+
+
 $$(a) ^ {-1} = (a ^ {-1}) = \left(\frac{1}{a}\right)$$$$
 \Leftrightarrow \nexists (a)^{-1} \quad \text{iff} \quad a = 0
 $$For an$n \times n$matrix$A$:$$A^{-1} = \frac{\text{something}}{\det(A)}$$$$
@@ -255,13 +262,11 @@ $$For an$n \times n$matrix$A$:$$A^{-1} = \frac{\text{something}}{\det(A)}$$$$
 $$For a$2 \times 2$matrix:$$
 A = \begin{bmatrix}
 a & b \\
-
 c & d
 \end{bmatrix}
 $$The inverse of$A$, if it exists, is given by:$$
 A^{-1} = \frac{1}{\text{det}(A)} \begin{bmatrix}
 d & -b \\
-
 -c & a
 \end{bmatrix}
 $$Note that the determinant must be non-zero for the inverse to exist. If$\text{det}(A) = 0$, then the matrix is singular and does not have an inverse.
@@ -279,6 +284,8 @@ The Einstein Summation Convention is a notational simplification used in tensor 
 For example, the matrix product of two matrices $A$ and $B$ is represented as:
 
 
+
+
 $$C_{ij} = \sum_k A_{ik} B_{kj}$$Using Einstein's Summation Convention, the summation symbol can be omitted:$$C_{ij} = A_{ik} B_{kj}$$Here, the index$k$ is implicitly summed over.
 
 ## 3.2 Simplification of Matrix Operations Using Einstein's Summation Convention
@@ -286,6 +293,8 @@ $$C_{ij} = \sum_k A_{ik} B_{kj}$$Using Einstein's Summation Convention, the summ
 In matrix and tensor operations, the Einstein Summation Convention simplifies the notation by automatically implying summation over repeated indices. This becomes especially useful when dealing with high-dimensional matrices or tensors. Without the convention, the same operation would require multiple summation symbols, which can be cumbersome for more complex expressions.
 
 For instance, when dealing with higher-dimensional tensors, the summation convention eliminates the need to write out every summation explicitly:
+
+
 
 
 $$C_{ijk} = \sum_l \sum_m T_{il} S_{lm} U_{mj}$$By using Einstein's Summation Convention, this becomes:$$C_{ijk} = T_{il} S_{lm} U_{mj}$$
@@ -297,6 +306,8 @@ This simplified notation is not only shorter but also more intuitive for physici
 The Einstein summation convention simplifies operations involving vectors and matrices by omitting summation symbols and using repeated indices. Projection allows us to express how components of a vector relate to other vectors (e.g., unit vectors or vectors along specific directions).
 
 By applying projection, we can extract the component of a vector $r$ along another vector $s$.
+
+
 
 
 $$\text{Proj}_{s}(r) =  \frac{r \times s}{r \times r} \times s$$
@@ -312,6 +323,8 @@ The identity matrix $I$ represents a transformation that leaves the vector uncha
 ## 3.4 Example Analysis
 
 Let us analyze the following equation:
+
+
 
 
 $$\mathbf{r}_i' = \mathbf{r}_i - \frac{S_i [e^3]_j r_j}{S_3}$$This formula represents the adjustment of the vector$\mathbf{r}_i$by subtracting a term related to the third component$r_3$. The adjustment is scaled by the factor$\frac{S_i}{S_3}$, and it is aligned with the unit vector$\mathbf{e_3}$in the$z$-direction.$$\mathbf{r}_i' = \left( \mathbf{I}_{ij} - \frac{S_i [e_3]_j r_j}{S_3} \right) r_j$$This formula represents subtracting from the original vector$\mathbf{r}_i$the quantity related to the$j$-th component and the$e_3$direction. Specifically, it applies a correction to the vector, reducing or increasing the influence along the third direction (e.g., the$z$-axis).
@@ -335,6 +348,8 @@ Imagine you are observing a vector, represented by a set of coordinates in a par
 Let us consider the following vector and bases:
 
 
+
+
 $$
 \mathbf{v} = \begin{bmatrix} 5 \\
 -1 \end{bmatrix}, \quad
@@ -345,6 +360,8 @@ $$
 $$To express$\mathbf{v}$in the new coordinate system defined by$\mathbf{b_1}$and$\mathbf{b_2}$, we need to compute the projection of$\mathbf{v}$onto both$\mathbf{b_1}$and$\mathbf{b_2}$.
 
 1. The projection of a vector $\mathbf{v}$ onto a vector $\mathbf{b_1}$ is given by:
+
+
 
 
 $$\frac{\mathbf{v} \cdot \mathbf{b_1}}{\mathbf{b_1} } = \text{Magnitude of the projection of } \mathbf{v} \text{ on } \mathbf{b_1}.$$$$
@@ -370,6 +387,8 @@ $$
 Now that we have the projections of $\mathbf{v}$ onto $\mathbf{b_1}$ and $\mathbf{b_2}$, we can write the vector $\mathbf{v}$ as a linear combination of the two basis vectors:
 
 
+
+
 $$\mathbf{v} = x \mathbf{b_1} + y \mathbf{b_2}$$Where$x$and$y$are the coefficients that we need to solve for. These coefficients are simply the projections we calculated earlier:$$
 \mathbf{v} = \begin{bmatrix} 2 \\
 2 \end{bmatrix} + \begin{bmatrix} 3 \\
@@ -384,6 +403,8 @@ $$Thus, the new coordinates of$\mathbf{v}$in the basis defined by$\mathbf{b_1}$a
 A matrix $Q$ is said to be **orthogonal** if its rows and columns are orthonormal vectors. In other words, a matrix $Q$ is orthogonal if:
 
 
+
+
 $$Q^T Q = Q Q^T = I$$Where$Q^T$is the transpose of$Q$, and$I$ is the identity matrix.
 
 ### 4.2.1 Properties of Orthogonal Matrices
@@ -391,6 +412,8 @@ $$Q^T Q = Q Q^T = I$$Where$Q^T$is the transpose of$Q$, and$I$ is the identity ma
 1. **Determinant of Orthogonal Matrix**: The determinant of an orthogonal matrix is always either $+1$ or $-1$:
 
    
+
+
 $$\text{det}(Q) = \pm 1$$2. **Inverse of Orthogonal Matrix**: The inverse of an orthogonal matrix is equal to its transpose:$$Q^{-1} = Q^T$$
 
 3. **Preserving Lengths and Angles**: Orthogonal matrices preserve the Euclidean length of vectors and the angles between them.
@@ -398,10 +421,11 @@ $$\text{det}(Q) = \pm 1$$2. **Inverse of Orthogonal Matrix**: The inverse of an 
 For example, the following matrix is orthogonal:
 
 
+
+
 $$
 Q = \begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
-
 -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
 \end{bmatrix}
 $$We can verify that$Q^T Q = I$, which confirms that$Q$ is orthogonal.
@@ -413,23 +437,22 @@ $$We can verify that$Q^T Q = I$, which confirms that$Q$ is orthogonal.
 A two-dimensional rotation matrix that rotates a vector by an angle $\theta$ is given by:
 
 
+
+
 $$
 R(\theta) = \begin{bmatrix}
 \cos\theta & -\sin\theta \\
-
 \sin\theta & \cos\theta
 \end{bmatrix}
 $$When this matrix is multiplied by a vector$\mathbf{v} = \begin{bmatrix} x \\ y \end{bmatrix}$, it rotates the vector by$\theta$degrees:$$
 \mathbf{v}' = R(\theta) \cdot \mathbf{v} = \begin{bmatrix}
 \cos\theta & -\sin\theta \\
-
 \sin\theta & \cos\theta
 \end{bmatrix} \begin{bmatrix} x \\
 y \end{bmatrix}
 $$This results in:$$
 \mathbf{v}' = \begin{bmatrix}
 x\cos\theta - y\sin\theta \\
-
 x\sin\theta + y\cos\theta
 \end{bmatrix}
 $$Thus, the vector$\mathbf{v}$is rotated counterclockwise by$\theta$ radians. This matrix is an example of an orthogonal matrix.
@@ -448,10 +471,11 @@ An eigenvalue is a scalar associated with a square matrix $\mathbf{A}$ that char
 The eigenvalue problem asks for values $\lambda$ and non-zero vectors $\mathbf{x}$ that satisfy the equation:
 
 
+
+
 $$A \mathbf{x} = \lambda \mathbf{x}$$To find the eigenvalues, solve the characteristic equation:$$\det(A - \lambda I) = 0$$For example, given:$$
 A = \begin{bmatrix}
 2 & 1 \\
-
 1 & 2
 \end{bmatrix}
 $$Solving the characteristic equation, we get:$$\lambda = 1 \quad \text{or} \quad \lambda = 3$$
@@ -461,22 +485,21 @@ In sum, the process for calculating eigenvalues is as follows:
 1. **Starting with the equation and expanding the determinant gives the quadratic equation:**
 
    
+
+
 $$\det(A - \lambda I) = 0$$$$
 \lambda^2 - (a + d) \lambda + ad - bc = 0
 $$2. **Calculating$A - \lambda I$:**$$
 \det \begin{bmatrix}
 A & b \\
-
 c & d
 \end{bmatrix} - \begin{bmatrix}
 \lambda & 0 \\
-
 0 & \lambda
 \end{bmatrix} = 0
 $$The next step is to subtract$\lambda$from the top-left and bottom-right entries of the matrix. This can be written as:$$
 \det \begin{bmatrix}
 A - \lambda & b \\
-
 c & d - \lambda
 \end{bmatrix} = 0
 $$3. **Next, consider the matrix equation:**$$
@@ -488,6 +511,8 @@ $$The result gives the eigenvectors$v_1, v_2$.
 ---
 ## Matrix Diagonalization
 Given a symmetric matrix: 
+
+
 $$A = QSQ^T$$where:$$
 A = \begin{bmatrix} 2 & 1 \\
 1 & 2 \end{bmatrix}
@@ -497,6 +522,8 @@ $$ is a symmetric matrix.
 
 The eigenvalues and corresponding eigenvectors are: 
  
+
+
 $$
 \lambda_1 = 1, \quad v_1 = \begin{bmatrix} 1 \\
 1 \end{bmatrix}
@@ -509,6 +536,8 @@ $$
  
  **Normalization of Eigenvectors**
 To normalize a vector, we compute its length (or norm), which is given by:
+
+
 
 $$\| v \| = \sqrt{| v_1 |^2 + | v_2 |^2}$$For example, for the vector$v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$:$$\| v_1 \| = \sqrt{1^2 + 1^2} = \sqrt{2}$$The normalized vectors are:$$
 q_1 = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\
@@ -532,6 +561,8 @@ Singular Value Decomposition (SVD) is a method of decomposing a matrix into thre
 Given a matrix $A$ of dimensions $m \times n$, the SVD is given by:
 
 
+
+
 $$A = U \Sigma V^T$$$$
 \text{Rotation} \times \text{Complete Matrix} \times \text{Rotation}
 $$
@@ -544,6 +575,8 @@ $$
 - If $\Sigma$ is real, $U$ and $V^T$ can be orthogonal matrices, satisfying:
 
   
+
+
 $$U^T U = I, \quad V^T V = I$$-$A^T$has dimensions$3 \times 2$-$A$has dimensions$2 \times 3$-$A^T A$has dimensions$3 \times 3$ and is the **right symmetric matrix** 
 - $A A^T$ has dimensions $2 \times 2$ and is the **left symmetric matrix**
 -  $U$ is a $2 \times 2$ matrix, corresponding to the eigenvectors of $A A^T$, 
@@ -552,16 +585,14 @@ $$U^T U = I, \quad V^T V = I$$-$A^T$has dimensions$3 \times 2$-$A$has dimensions
 
 - Substituting $A = U\Sigma V^T$ into $AA^T$, we have:
 
+
+
 $$
 \begin{aligned}
 A A^T &= U\Sigma V^T (U \Sigma V^T)^T \\
-
 &= U \Sigma V^T V \Sigma^T U^T \\
-
 &= U \Sigma \Sigma^T U^T \\
-
 &= U \Lambda U^T \\
-
 &= U \Lambda U^{-1}
 \end{aligned}
 $$i.e.,$(AA^T) = U\Lambda U^{-1}$i.e., the column vectors of$U$are the eigenvectors of$AA^T$. 
@@ -570,6 +601,8 @@ $$i.e.,$(AA^T) = U\Lambda U^{-1}$i.e., the column vectors of$U$are the eigenvect
  $\Sigma^T \Sigma = \begin{bmatrix}\sigma_1^2 & 0 & 0 \\ 0 & \sigma_2^2 & 0 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} \lambda_1 & 0 & 0 \\ 0& \lambda_2 & 0 \\ 0 & 0 & 0\end{bmatrix}$
  i.e., $AA^T$ and $A^TA$ have the same non-zero eigenvalues.
 - The singular values $\sigma$ are the non-negative square roots of the eigenvalues of the matrix $A^T A$ or $AA^T$: 
+
+
 $$\sigma_i = \sqrt{\lambda_i}$$ 
 
 
@@ -578,10 +611,11 @@ $$\sigma_i = \sqrt{\lambda_i}$$
 For a given matrix $A$:
 
 
+
+
 $$
 A = \begin{bmatrix}
 1 & 2 \\
-
 3 & 4
 \end{bmatrix}
 $$- We calculate the SVD by finding the eigenvalues  and eigenvectors and of$A^T A$or$AA^T$- Then construct the matrices$U$,$\Sigma$, and$V^T$. This decomposition allows for dimensionality.
