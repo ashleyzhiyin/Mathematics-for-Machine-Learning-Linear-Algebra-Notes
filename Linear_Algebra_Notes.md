@@ -598,7 +598,7 @@ $$
 i.e., $(AA^T) = U\Lambda U^{-1}$
 i.e., the column vectors of $U$ are the eigenvectors of $AA^T$. 
 - Similarly, the column vector of $V$ are the eigenvectors of $A^T A$.
-- $\Sigma = \begin{bmatrix}\sigma_1 & 0 & 0 \\ 0 & \sigma_2 & 0 \end{bmatrix} \Rightarrow \Sigma \Sigma^T = \begin{bmatrix} \sigma_1^2 & 0 \\ 0 & \sigma_2^2 \end{bmatrix} = \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{bmatrix}$,  
+$\Sigma = \begin{bmatrix}\sigma_1 & 0 & 0 \\ 0 & \sigma_2 & 0 \end{bmatrix} \Rightarrow \Sigma \Sigma^T = \begin{bmatrix} \sigma_1^2 & 0 \\ 0 & \sigma_2^2 \end{bmatrix} = \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{bmatrix}$,  
  $\Sigma^T \Sigma = \begin{bmatrix}\sigma_1^2 & 0 & 0 \\ 0 & \sigma_2^2 & 0 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} \lambda_1 & 0 & 0 \\ 0& \lambda_2 & 0 \\ 0 & 0 & 0\end{bmatrix}$
  i.e., $AA^T$ and $A^TA$ have the same non-zero eigenvalues.
 - The singular values $\sigma$ are the non-negative square roots of the eigenvalues of the matrix $A^T A$ or $AA^T$: $$\sigma_i = \sqrt{\lambda_i}$$ 
