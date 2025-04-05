@@ -595,15 +595,15 @@ $$Q = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
  -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}$$ 
  
  Its transpose is: 
- $$
- Q^T = \begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
- \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}
- $$ 
+$$
+Q^T = \begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}
+$$ 
  
- The diagonal matrix: $$S = \begin{bmatrix} 3 & 0 \\
- 0 & 1 \end{bmatrix}$$ 
- 
- Thus, the decomposition of $A$: $$A = Q S Q^T$$ represents a simple scaling transformation with a diagonal matrix.
+The diagonal matrix: $$S = \begin{bmatrix} 3 & 0 \\
+0 & 1 \end{bmatrix}$$ 
+
+Thus, the decomposition of $A$: $$A = Q S Q^T$$ represents a simple scaling transformation with a diagonal matrix.
 
 ## Singular Value Decomposition (SVD)
 
