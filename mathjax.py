@@ -1,13 +1,13 @@
 import re
 
 def fix_inline_latex_spacing(markdown_text):
-    # This regex matches anything like $ something $ (with optional whitespace inside)
-    pattern = r"\$(\s+[^$]+?\s+)\$"
+    # Match things like $ A $ but not $$ A $$
+    pattern = r"(?<!\$)\$(\s*[^$\n]*?\s*)\$(?!\$)"
 
-    # This function trims the spaces between the dollar signs and the content
     def replacer(match):
-        content = match.group(1).strip()
-        return f"${content}$"
+        inner = match.group(1)
+        fixed = inner.strip()
+        return f"${fixed}$"
 
     return re.sub(pattern, replacer, markdown_text)
 

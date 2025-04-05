@@ -95,14 +95,14 @@ $$
 
 ### 1.1.3 Matrix Multiplication Example
 
-Let $ A $ be a $ 2 \times 3 $ matrix, and $ B $ be a $ 3 \times 2 $ matrix:
+Let $A$ be a $2 \times 3$ matrix, and $B$ be a $3 \times 2$ matrix:
 
 $$
 A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}, \quad
 B = \begin{bmatrix} 7 & 8 \\ 9 & 10 \\ 11 & 12 \end{bmatrix}
 $$
 
-Since the number of columns in $ A $ (3) is equal to the number of rows in $ B $ (3), we can multiply these matrices. The result will be a $ 2 \times 2 $ matrix $ C $, where each element of $ C $ is calculated as:
+Since the number of columns in $A$ (3) is equal to the number of rows in $B$ (3), we can multiply these matrices. The result will be a $2 \times 2$ matrix $C$, where each element of $C$ is calculated as:
 
 $$
 C = A \times B = \begin{bmatrix} 
@@ -124,7 +124,7 @@ C = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-Thus, the product of matrices $ A $ and $ B $ is:
+Thus, the product of matrices $A$ and $B$ is:
 
 $$
 C = \begin{bmatrix} 58 & 64 \\ 139 & 154 \end{bmatrix}
@@ -194,7 +194,7 @@ $$
 \end{bmatrix}
 $$
 
-From here, back-substitution can be used to solve for $ x, y, z $.
+From here, back-substitution can be used to solve for $x, y, z$.
 
 $$
 x = \frac{2}{3}, \quad y = \frac{5}{3}, \quad z = \frac{5}{3}
