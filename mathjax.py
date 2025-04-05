@@ -32,11 +32,11 @@ if __name__ == "__main__":
     with open(file, "r", encoding="utf-8") as f:
         content = f.read()
 
-    fixed_content = fix_inline_latex_spacing(content)
-    fixed_content = fix_inline_double_dollar_spacing(content)
-    fixed_content = fix_indented_math_blocks(content)
+    content = fix_inline_latex_spacing(content)
+    content = fix_inline_double_dollar_spacing(content)
+    content = fix_indented_math_blocks(content)
 
     with open(file, "w", encoding="utf-8") as f:
-        f.write(fixed_content)
+        f.write(content)
 
     print(f"Fixed Markdown written to {file}.")
