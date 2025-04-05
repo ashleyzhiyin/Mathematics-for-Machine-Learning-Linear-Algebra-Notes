@@ -19,7 +19,10 @@ a_{21} & a_{22} & \dots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
 a_{m1} & a_{m2} & \dots & a_{mn}
 \end{bmatrix}
-$$This is an$m \times n$ matrix.
+$$
+
+
+This is an$m \times n$ matrix.
 
 For example, a $2 \times 3$ matrix:
 
