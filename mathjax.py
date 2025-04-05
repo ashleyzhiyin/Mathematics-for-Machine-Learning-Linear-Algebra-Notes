@@ -1,59 +1,19 @@
 import re
 
+def clean_math_blocks(math_text):
+    # Case 1: If the double dollar block is indented, unindent it.
+    math_text = re.sub(r'^\s*\$\$(.*?)\$\$', r'$$\1$$', math_text, flags=re.DOTALL)
 
-def clean_inline_math(content: str) -> str:
-    return f"${content.strip()}$"
+    # Case 2: If double dollar does not occupy its own line, make it do so.
+    math_text = re.sub(r'\$\$(.*?)\$\$', r'\n$$\1$$\n', math_text, flags=re.DOTALL)
 
-def clean_display_math(content: str) -> str:
-    # Fix \\ not followed by newline
-    def fix_backslashes(match):
-        if match.group(0).endswith('\n'):
-            return match.group(0)
-        return '\\\\\n'
+    # Case 3: If there are spaces between single dollar sign and the math, remove them.
+    math_text = re.sub(r'\$ (\S.*?) \$', r'$\1$', math_text)
 
-    content = re.sub(r'\\\\(?!\s*\n)', fix_backslashes, content)
+    # Case 4: If there are extra line breaks inside the double dollar block, remove them.
+    math_text = re.sub(r'\$\$(.*?)\$\$', lambda m: '$$\n' + re.sub(r'\n+', '\n', m.group(1).strip()) + '\n$$', math_text, flags=re.DOTALL)
 
-    # Trim spaces at start and end (not per line)
-    return f"$${content.strip()}$$"
-
-def clean_math_blocks(text: str) -> str:
-    result = []
-    last_pos = 0
-
-    # Matches inline ($...$) and display ($$...$$)
-    pattern = re.compile(
-        r"(?P<display>\$\$(?:.|\n)*?\$\$)|(?P<inline>\$(?!\$)(?:\\\$|[^\n\$])+\$)"
-    )
-
-    for match in pattern.finditer(text):
-        # Text before this match
-        before = text[last_pos:match.start()]
-
-        raw = match.group(0)
-        cleaned = raw
-
-        # Handle the case when there's no newline before $$ (add one)
-        if match.group("display"):
-            if not before.endswith('\n'):
-                before += '\n'  # Add linebreak before display math
-
-            # Remove indent before display math if it follows a linebreak
-            before = re.sub(r'([^\S\r\n]*)$', '', before)  # remove trailing spaces
-            if before.endswith('\n'):
-                before = re.sub(r'(\n)[ \t]+$', r'\1', before)  # remove indent after linebreak
-
-            inner = raw[2:-2]
-            cleaned = clean_display_math(inner)
-        elif match.group("inline"):
-            inner = raw[1:-1]
-            cleaned = clean_inline_math(inner)
-
-        result.append(before)
-        result.append(cleaned)
-        last_pos = match.end()
-
-    result.append(text[last_pos:])
-    return ''.join(result)
+    return math_text
 
 # Example usage
 if __name__ == "__main__":
