@@ -10,8 +10,8 @@ def fix_math_blocks(text):
         cleaned_lines = [line.strip() for line in lines if line.strip() != '']
         return '$$\n' + '\n'.join(cleaned_lines) + '\n$$'
 
-    # First ensure all double-dollar blocks are isolated on their own lines
-    text = re.sub(r'\${2}\s*(.*?)\s*\${2}', lambda m: f'$$\n{m.group(1).strip()}\n$$', text, flags=re.DOTALL)
+    # First ensure all double-dollar blocks are isolated on their own lines and unindented
+    text = re.sub(r'^[ \t]*\$\$[ \t]*\n(.*?\n)[ \t]*\$\$[ \t]*$', lambda m: f'$$\n{m.group(1).strip()}\n$$', text, flags=re.DOTALL | re.MULTILINE)
 
     # Then normalize their contents
     text = re.sub(r'\$\$\n(.*?)\n\$\$', normalize_double_dollars, text, flags=re.DOTALL)

@@ -41,19 +41,19 @@ $$
 
 1. **Square Matrix**: Number of rows = number of columns.
 
-   $$
+$$
 A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}
 $$
 
 2. **Zero Matrix**: All elements are zero.
 
-   $$
+$$
 A = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}
 $$
 
 3. **Identity Matrix**: Square matrix with ones on the diagonal.
 
-   $$
+$$
 I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
 $$
 
@@ -61,35 +61,35 @@ $$
 
 1. **Addition**: Only possible for matrices of the same size.
 
-   $$
+$$
 A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix},
 B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
 $$
 
-   $$
+$$
 A + B = \begin{bmatrix} 6 & 8 \\ 10 & 12 \end{bmatrix}
 $$
 
 2. **Multiplication by Scalar**: Each element of the matrix is multiplied by a constant.
 
-   $$
+$$
 2 \times \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 2 & 4 \\ 6 & 8 \end{bmatrix}
 $$
 
 3. **Matrix Multiplication**: Number of columns in the first matrix must equal the number of rows in the second.
 
-   $$
+$$
 A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix},
 B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
 $$
 
-   $$
+$$
 A \times B = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}
 $$
 
 4. **Transpose**: Flip rows and columns.
 
-   $$
+$$
 A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad A^T = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}
 $$
 
@@ -246,19 +246,19 @@ For larger matrices, the determinant can be computed recursively using cofactor 
 
 1. **Multiplicative Property**: If $A$ and $B$ are square matrices of the same size, then:
 
-   $$
+$$
 \text{det}(AB) = \text{det}(A) \cdot \text{det}(B)
 $$
 
 2. **Invertibility**: A matrix is invertible if and only if its determinant is non-zero. That is, a matrix $A$ is invertible if:
 
-   $$
+$$
 \text{det}(A) \neq 0
 $$
 
 3. **Determinant of Transpose**: The determinant of the transpose of a matrix is the same as the determinant of the original matrix:
 
-   $$
+$$
 \text{det}(A^T) = \text{det}(A)
 $$
 
@@ -512,13 +512,13 @@ Where $Q^T$ is the transpose of $Q$, and $I$ is the identity matrix.
 
 1. **Determinant of Orthogonal Matrix**: The determinant of an orthogonal matrix is always either $+1$ or $-1$:
 
-   $$
+$$
 \text{det}(Q) = \pm 1
 $$
 
 2. **Inverse of Orthogonal Matrix**: The inverse of an orthogonal matrix is equal to its transpose:
 
-   $$
+$$
 Q^{-1} = Q^T
 $$
 
@@ -610,17 +610,17 @@ In sum, the process for calculating eigenvalues is as follows:
 
 1. **Starting with the equation and expanding the determinant gives the quadratic equation:**
 
-   $$
+$$
 \det(A - \lambda I) = 0
 $$
 
-   $$
+$$
 \lambda^2 - (a + d) \lambda + ad - bc = 0
 $$
 
 2. **Calculating $A - \lambda I$:**
 
-   $$
+$$
 \det \begin{bmatrix}
 A & b \\
 c & d
@@ -632,7 +632,7 @@ $$
 
    The next step is to subtract $\lambda$ from the top-left and bottom-right entries of the matrix. This can be written as:
 
-   $$
+$$
 \det \begin{bmatrix}
 A - \lambda & b \\
 c & d - \lambda
@@ -641,7 +641,7 @@ $$
 
 3. **Next, consider the matrix equation:**
 
-   $$
+$$
 (A - \lambda I) \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 $$
 
@@ -658,12 +658,12 @@ $$ is a symmetric matrix.
 **1. Eigenvalue and Eigenvectors 
 
 The eigenvalues and corresponding eigenvectors are: 
- $$
+$$
 \lambda_1 = 1, \quad v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-$$ 
+$$
 $$
 \lambda_2 = 3, \quad v_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}
-$$ 
+$$
 - According to **Theorem 1**: 
  If $A$ is a symmetric matrix, then any two eigenvectors from different eigenspaces are orthogonal. 
  
@@ -677,22 +677,21 @@ $$
 \| v_1 \| = \sqrt{1^2 + 1^2} = \sqrt{2}
 $$
  The normalized vectors are:
- $$
+$$
 q_1 = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad q_2 = \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\ 1 \end{bmatrix}
-$$ 
+$$
  
  **Constructing the orthogonal matrix** $Q$: 
- $$
+$$
 Q = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}
-$$ 
+$$
  
  Its transpose is: $$
 Q^T = \begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}
-$$ 
- 
- The diagonal matrix: $$
+$$
+The diagonal matrix: $$
 S = \begin{bmatrix} 3 & 0 \\ 0 & 1 \end{bmatrix}
-$$ 
+$$
  
  Thus, the decomposition of $A$: $$
 A = Q S Q^T
@@ -719,7 +718,7 @@ $$
 - $V^T$ is an $n \times n$ orthogonal matrix whose rows are the **right singular vectors**.
 - If $\Sigma$ is real, $U$ and $V^T$ can be orthogonal matrices, satisfying:
 
-  $$
+$$
 U^T U = I, \quad V^T V = I
 $$
 
@@ -741,7 +740,7 @@ A A^T &= U\Sigma V^T (U \Sigma V^T)^T \\
 &= U \Lambda U^T \\
 &= U \Lambda U^{-1}
 \end{aligned}
-$$ 
+$$
 i.e., $(AA^T) = U\Lambda U^{-1}$
 i.e., the column vectors of $U$ are the eigenvectors of $AA^T$. 
 - Similarly, the column vector of $V$ are the eigenvectors of $A^T A$.
@@ -750,13 +749,10 @@ i.e., the column vectors of $U$ are the eigenvectors of $AA^T$.
  i.e., $AA^T$ and $A^TA$ have the same non-zero eigenvalues.
 - The singular values $\sigma$ are the non-negative square roots of the eigenvalues of the matrix $A^T A$ or $AA^T$: $$
 \sigma_i = \sqrt{\lambda_i}
-$$ 
-
-
+$$
 #### Example: SVD of a Matrix
 
 For a given matrix $A$:
-
 $$
 A = \begin{bmatrix}
 1 & 2 \\
