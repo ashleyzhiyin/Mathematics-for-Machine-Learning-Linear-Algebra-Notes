@@ -23,8 +23,8 @@ This is an $m \times n$ matrix.
 For example, a $2 \times 3$ matrix:
 
 $$
-M= \begin{bmatrix}
-60 & 98 & 42 \\ 170 & 16 & 14
+M= \begin{bmatrix} 
+60 & 98 & 42 \\ 170 & 16 & 14 
 \end{bmatrix}
 $$
 
@@ -62,7 +62,7 @@ $$
 1. **Addition**: Only possible for matrices of the same size.
 
 $$
-A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix},
+A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, 
 B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
 $$
 
@@ -79,7 +79,7 @@ $$
 3. **Matrix Multiplication**: Number of columns in the first matrix must equal the number of rows in the second.
 
 $$
-A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix},
+A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, 
 B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
 $$
 
@@ -95,17 +95,17 @@ $$
 
 ### 1.1.3 Matrix Multiplication Example
 
-Let $A$ be a $2 \times 3$ matrix, and $B$ be a $3 \times 2$ matrix:
+Let $ A $ be a $ 2 \times 3 $ matrix, and $ B $ be a $ 3 \times 2 $ matrix:
 
 $$
 A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}, \quad
 B = \begin{bmatrix} 7 & 8 \\ 9 & 10 \\ 11 & 12 \end{bmatrix}
 $$
 
-Since the number of columns in $A$ (3) is equal to the number of rows in $B$ (3), we can multiply these matrices. The result will be a $2 \times 2$ matrix $C$, where each element of $C$ is calculated as:
+Since the number of columns in $ A $ (3) is equal to the number of rows in $ B $ (3), we can multiply these matrices. The result will be a $ 2 \times 2 $ matrix $ C $, where each element of $ C $ is calculated as:
 
 $$
-C = A \times B = \begin{bmatrix}
+C = A \times B = \begin{bmatrix} 
 (1 \times 7 + 2 \times 9 + 3 \times 11) & (1 \times 8 + 2 \times 10 + 3 \times 12) \\
 (4 \times 7 + 5 \times 9 + 6 \times 11) & (4 \times 8 + 5 \times 10 + 6 \times 12)
 \end{bmatrix}
@@ -114,17 +114,17 @@ $$
 Calculating each element:
 
 $$
-C = \begin{bmatrix}
+C = \begin{bmatrix} 
 7 + 18 + 33 & 8 + 20 + 36 \\
 28 + 45 + 66 & 32 + 50 + 72
 \end{bmatrix}
-= \begin{bmatrix}
+= \begin{bmatrix} 
 58 & 64 \\
 139 & 154
 \end{bmatrix}
 $$
 
-Thus, the product of matrices $A$ and $B$ is:
+Thus, the product of matrices $ A $ and $ B $ is:
 
 $$
 C = \begin{bmatrix} 58 & 64 \\ 139 & 154 \end{bmatrix}
@@ -194,7 +194,7 @@ $$
 \end{bmatrix}
 $$
 
-From here, back-substitution can be used to solve for $x, y, z$.
+From here, back-substitution can be used to solve for $ x, y, z $.
 
 $$
 x = \frac{2}{3}, \quad y = \frac{5}{3}, \quad z = \frac{5}{3}
@@ -237,7 +237,19 @@ $$
 The determinant is calculated as:
 
 $$
-\text{det}(A) = a \begin{vmatrix} e & f \\ h & i \end{vmatrix} - b \begin{vmatrix} d & f \\ g & i \end{vmatrix} + c \begin{vmatrix} d & e \\ g & h \end{vmatrix}
+\text{det}(A) = a 
+\begin{vmatrix} 
+e & f \\
+h & i 
+\end{vmatrix} - b 
+\begin{vmatrix} 
+d & f \\
+g & i 
+\end{vmatrix} + c 
+\begin{vmatrix} 
+d & e \\
+g & h 
+\end{vmatrix}
 $$
 
 For larger matrices, the determinant can be computed recursively using cofactor expansion.
@@ -293,7 +305,7 @@ A^{-1} = \frac{\text{something}}{\det(A)}
 $$
 
 $$
-\Leftrightarrow \nexists A^{-1} \quad \text{iff} \quad \det(A) = 0
+\Leftrightarrow \nexists A^{-1} \quad \text{iff} \quad \det(A) = 0 
 $$
 
 For a $2 \times 2$ matrix:
@@ -411,8 +423,8 @@ Imagine you are observing a vector, represented by a set of coordinates in a par
 Let us consider the following vector and bases:
 
 $$
-\mathbf{v} = \begin{bmatrix} 5 \\ -1 \end{bmatrix}, \quad
-\mathbf{b_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad
+\mathbf{v} = \begin{bmatrix} 5 \\ -1 \end{bmatrix}, \quad 
+\mathbf{b_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad 
 \mathbf{b_2} = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 $$
 
@@ -542,27 +554,27 @@ We can verify that $Q^T Q = I$, which confirms that $Q$ is orthogonal.
 A two-dimensional rotation matrix that rotates a vector by an angle $\theta$ is given by:
 
 $$
-R(\theta) = \begin{bmatrix}
+R(\theta) = \begin{bmatrix} 
 \cos\theta & -\sin\theta \\
-\sin\theta & \cos\theta
+\sin\theta & \cos\theta 
 \end{bmatrix}
 $$
 
 When this matrix is multiplied by a vector $\mathbf{v} = \begin{bmatrix} x \\ y \end{bmatrix}$, it rotates the vector by $\theta$ degrees:
 
 $$
-\mathbf{v}' = R(\theta) \cdot \mathbf{v} = \begin{bmatrix}
+\mathbf{v}' = R(\theta) \cdot \mathbf{v} = \begin{bmatrix} 
 \cos\theta & -\sin\theta \\
-\sin\theta & \cos\theta
+\sin\theta & \cos\theta 
 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
 $$
 
 This results in:
 
 $$
-\mathbf{v}' = \begin{bmatrix}
+\mathbf{v}' = \begin{bmatrix} 
 x\cos\theta - y\sin\theta \\
-x\sin\theta + y\cos\theta
+x\sin\theta + y\cos\theta 
 \end{bmatrix}
 $$
 
@@ -594,7 +606,7 @@ $$
 For example, given:
 
 $$
-A = \begin{bmatrix}
+A = \begin{bmatrix} 
 2 & 1 \\
 1 & 2
 \end{bmatrix}
@@ -610,92 +622,118 @@ In sum, the process for calculating eigenvalues is as follows:
 
 1. **Starting with the equation and expanding the determinant gives the quadratic equation:**
 
-$$
-\det(A - \lambda I) = 0
-$$
+   $$
+   \det(A - \lambda I) = 0
+   $$
 
-$$
-\lambda^2 - (a + d) \lambda + ad - bc = 0
-$$
+   $$
+   \lambda^2 - (a + d) \lambda + ad - bc = 0
+   $$
 
 2. **Calculating $A - \lambda I$:**
 
-$$
-\det \begin{bmatrix}
-A & b \\
-c & d
-\end{bmatrix} - \begin{bmatrix}
-\lambda & 0 \\
-0 & \lambda
-\end{bmatrix} = 0
-$$
+   $$
+   \det \begin{bmatrix}
+   A & b \\
+   c & d
+   \end{bmatrix} - \begin{bmatrix}
+   \lambda & 0 \\
+   0 & \lambda
+   \end{bmatrix} = 0
+   $$
 
    The next step is to subtract $\lambda$ from the top-left and bottom-right entries of the matrix. This can be written as:
 
-$$
-\det \begin{bmatrix}
-A - \lambda & b \\
-c & d - \lambda
-\end{bmatrix} = 0
-$$
+   $$
+   \det \begin{bmatrix}
+   A - \lambda & b \\
+   c & d - \lambda
+   \end{bmatrix} = 0
+   $$
 
 3. **Next, consider the matrix equation:**
 
-$$
-(A - \lambda I) \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
-$$
+   $$
+   (A - \lambda I) 
+   \begin{bmatrix} 
+   v_1 \\
+    v_2 
+    \end{bmatrix} = 
+    \begin{bmatrix} 
+    0 \\
+     0 \end{bmatrix}
+   $$
 
    The result gives the eigenvectors $v_1, v_2$.
 
 ---
 ## Matrix Diagonalization
-Given a symmetric matrix: $$
-A = QSQ^T
-$$ where: $$
-A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}
-$$ is a symmetric matrix. 
+Given a symmetric matrix: $$ A = QSQ^T $$ where: $$ A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} $$ is a symmetric matrix. 
 
 **1. Eigenvalue and Eigenvectors 
 
 The eigenvalues and corresponding eigenvectors are: 
+
+ $$
+ \lambda_1 = 1, \quad v_1 = \begin{bmatrix} 1 \\
+  1 \end{bmatrix}
+ $$ 
+ 
 $$
-\lambda_1 = 1, \quad v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-$$
-$$
-\lambda_2 = 3, \quad v_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}
-$$
+\lambda_2 = 3, \quad v_2 = \begin{bmatrix} -1 \\ 
+1 \end{bmatrix}
+$$ 
+
 - According to **Theorem 1**: 
  If $A$ is a symmetric matrix, then any two eigenvectors from different eigenspaces are orthogonal. 
  
  **Normalization of Eigenvectors**
 To normalize a vector, we compute its length (or norm), which is given by:
+
 $$
 \| v \| = \sqrt{| v_1 |^2 + | v_2 |^2}
 $$
-For example, for the vector $v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$:
+
+For example, for the vector 
+
+$$
+v_1 = \begin{bmatrix} 1 \\
+1 \end{bmatrix}
+$$:
+
 $$
 \| v_1 \| = \sqrt{1^2 + 1^2} = \sqrt{2}
 $$
+
  The normalized vectors are:
-$$
-q_1 = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad q_2 = \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\ 1 \end{bmatrix}
-$$
+ 
+$$ 
+q_1 = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\
+1 \end{bmatrix}, \quad q_2 = \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\
+1 \end{bmatrix} 
+$$ 
  
  **Constructing the orthogonal matrix** $Q$: 
 $$
-Q = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}
-$$
+Q = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix} 
+$$ 
  
- Its transpose is: $$
-Q^T = \begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}
-$$
-The diagonal matrix: $$
-S = \begin{bmatrix} 3 & 0 \\ 0 & 1 \end{bmatrix}
-$$
+ Its transpose is: 
  
- Thus, the decomposition of $A$: $$
-A = Q S Q^T
-$$ represents a simple scaling transformation with a diagonal matrix.
+$$ 
+Q^T = \begin{bmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix} 
+$$ 
+ 
+ The diagonal matrix: 
+ 
+$$
+S = \begin{bmatrix} 3 & 0 \\
+0 & 1 \end{bmatrix} 
+$$ 
+ 
+ Thus, the decomposition of $A$: $$ A = Q S Q^T $$ represents a simple scaling transformation with a diagonal matrix.
 
 ## Singular Value Decomposition (SVD)
 
@@ -733,28 +771,60 @@ $$
 
 - Substituting $A = U\Sigma V^T$ into $AA^T$, we have:
 
-$$
-\begin{aligned}
+$$ \begin{aligned} 
 A A^T &= U\Sigma V^T (U \Sigma V^T)^T \\
 &= U \Sigma V^T V \Sigma^T U^T \\
 &= U \Sigma \Sigma^T U^T \\
 &= U \Lambda U^T \\
 &= U \Lambda U^{-1}
-\end{aligned}
-$$
+ \end{aligned}
+$$ 
 
 i.e., $(AA^T) = U\Lambda U^{-1}$
 i.e., the column vectors of $U$ are the eigenvectors of $AA^T$. 
 - Similarly, the column vector of $V$ are the eigenvectors of $A^T A$.
-- $\Sigma = \begin{bmatrix}\sigma_1 & 0 & 0 \\ 0 & \sigma_2 & 0 \end{bmatrix} \Rightarrow \Sigma \Sigma^T = \begin{bmatrix} \sigma_1^2 & 0 \\ 0 & \sigma_2^2 \end{bmatrix} = \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{bmatrix}$ 
- $\Sigma^T \Sigma = \begin{bmatrix}\sigma_1^2 & 0 & 0 \\ 0 & \sigma_2^2 & 0 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} \lambda_1 & 0 & 0 \\ 0& \lambda_2 & 0 \\ 0 & 0 & 0\end{bmatrix}$
- i.e., $AA^T$ and $A^TA$ have the same non-zero eigenvalues.
-- The singular values $\sigma$ are the non-negative square roots of the eigenvalues of the matrix $A^T A$ or $AA^T$: $$
-\sigma_i = \sqrt{\lambda_i}
 $$
+\Sigma = 
+\begin{bmatrix}
+\sigma_1 & 0 & 0 \\
+0 & \sigma_2 & 0 
+\end{bmatrix} \Rightarrow \Sigma \Sigma^T = 
+\begin{bmatrix} 
+\sigma_1^2 & 0 \\
+0 & \sigma_2^2 
+\end{bmatrix} = 
+\begin{bmatrix} 
+\lambda_1 & 0 \\
+0 & \lambda_2 
+\end{bmatrix}
+$$ 
+
+$$
+\Sigma^T \Sigma = 
+\begin{bmatrix}
+\sigma_1^2 & 0 & 0 \\
+0 & \sigma_2^2 & 0 \\
+0 & 0 & 0 
+\end{bmatrix} = 
+\begin{bmatrix} 
+\lambda_1 & 0 & 0 \\
+0& \lambda_2 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+$$
+
+ i.e., $AA^T$ and $A^TA$ have the same non-zero eigenvalues.
+- The singular values $\sigma$ are the non-negative square roots of the eigenvalues of the matrix $A^T A$ or $AA^T$: 
+
+$$
+\sigma_i = \sqrt{\lambda_i}
+$$ 
+
+
 #### Example: SVD of a Matrix
 
 For a given matrix $A$:
+
 $$
 A = \begin{bmatrix}
 1 & 2 \\
