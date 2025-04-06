@@ -807,6 +807,7 @@ $$
 i.e., $(AA^T) = U\Lambda U^{-1}$
 i.e., the column vectors of $U$ are the eigenvectors of $AA^T$. 
 - Similarly, the column vector of $V$ are the eigenvectors of $A^T A$.
+
 $$
 \Sigma = 
 \begin{bmatrix}
