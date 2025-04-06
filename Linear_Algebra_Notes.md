@@ -24,7 +24,8 @@ For example, a $2 \times 3$ matrix:
 
 $$
 M= \begin{bmatrix} 
-60 & 98 & 42 \\ 170 & 16 & 14 
+60 & 98 & 42 \\
+170 & 16 & 14 
 \end{bmatrix}
 $$
 
@@ -42,19 +43,22 @@ $$
 1. **Square Matrix**: Number of rows = number of columns.
 
 $$
-A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}
+A = \begin{bmatrix} 1 & 2 \\
+3 & 4 \end{bmatrix}
 $$
 
 2. **Zero Matrix**: All elements are zero.
 
 $$
-A = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}
+A = \begin{bmatrix} 0 & 0 \\
+0 & 0 \end{bmatrix}
 $$
 
 3. **Identity Matrix**: Square matrix with ones on the diagonal.
 
 $$
-I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+I = \begin{bmatrix} 1 & 0 \\
+0 & 1 \end{bmatrix}
 $$
 
 ### 1.1.2 Matrix Operations
@@ -62,35 +66,51 @@ $$
 1. **Addition**: Only possible for matrices of the same size.
 
 $$
-A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, 
-B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
+A = \begin{bmatrix} 1 & 2 \\
+3 & 4 \end{bmatrix}, 
+B = \begin{bmatrix} 5 & 6 \\
+7 & 8 \end{bmatrix}
 $$
 
 $$
-A + B = \begin{bmatrix} 6 & 8 \\ 10 & 12 \end{bmatrix}
+A + B = \begin{bmatrix} 6 & 8 \\
+10 & 12 \end{bmatrix}
 $$
 
 2. **Multiplication by Scalar**: Each element of the matrix is multiplied by a constant.
 
 $$
-2 \times \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 2 & 4 \\ 6 & 8 \end{bmatrix}
+2 \times 
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 
+\end{bmatrix} = 
+\begin{bmatrix}
+2 & 4 \\
+6 & 8 
+\end{bmatrix}
 $$
 
 3. **Matrix Multiplication**: Number of columns in the first matrix must equal the number of rows in the second.
 
 $$
-A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, 
-B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
+A = \begin{bmatrix} 1 & 2 \\
+3 & 4 \end{bmatrix}, 
+B = \begin{bmatrix} 5 & 6 \\
+7 & 8 \end{bmatrix}
 $$
 
 $$
-A \times B = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}
+A \times B = \begin{bmatrix} 19 & 22 \\
+43 & 50 \end{bmatrix}
 $$
 
 4. **Transpose**: Flip rows and columns.
 
 $$
-A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad A^T = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}
+A = \begin{bmatrix} 1 & 2 \\
+3 & 4 \end{bmatrix}, \quad A^T = \begin{bmatrix} 1 & 3 \\
+2 & 4 \end{bmatrix}
 $$
 
 ### 1.1.3 Matrix Multiplication Example
@@ -98,8 +118,11 @@ $$
 Let $ A $ be a $ 2 \times 3 $ matrix, and $ B $ be a $ 3 \times 2 $ matrix:
 
 $$
-A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}, \quad
-B = \begin{bmatrix} 7 & 8 \\ 9 & 10 \\ 11 & 12 \end{bmatrix}
+A = \begin{bmatrix} 1 & 2 & 3 \\
+4 & 5 & 6 \end{bmatrix}, \quad
+B = \begin{bmatrix} 7 & 8 \\
+9 & 10 \\
+11 & 12 \end{bmatrix}
 $$
 
 Since the number of columns in $ A $ (3) is equal to the number of rows in $ B $ (3), we can multiply these matrices. The result will be a $ 2 \times 2 $ matrix $ C $, where each element of $ C $ is calculated as:
@@ -127,7 +150,8 @@ $$
 Thus, the product of matrices $ A $ and $ B $ is:
 
 $$
-C = \begin{bmatrix} 58 & 64 \\ 139 & 154 \end{bmatrix}
+C = \begin{bmatrix} 58 & 64 \\
+139 & 154 \end{bmatrix}
 $$
 
 ---
