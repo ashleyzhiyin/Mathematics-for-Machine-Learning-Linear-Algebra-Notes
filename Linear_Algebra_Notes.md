@@ -732,6 +732,7 @@ $$
 
 
 - Substituting $A = U\Sigma V^T$ into $AA^T$, we have:
+
 $$
 \begin{aligned}
 A A^T &= U\Sigma V^T (U \Sigma V^T)^T \\
