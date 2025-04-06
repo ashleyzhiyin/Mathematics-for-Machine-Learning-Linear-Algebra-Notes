@@ -26,8 +26,8 @@ For example, a $2 \times 3$ matrix:
 
 
 $$
-M= \begin{bmatrix} 
-60 & 98 & 42 \\ 170 & 16 & 14 
+M= \begin{bmatrix}
+60 & 98 & 42 \\ 170 & 16 & 14
 \end{bmatrix}
 $$
 
@@ -73,8 +73,8 @@ $$
 
    
 $$
-A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, 
-   B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
+A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix},
+B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
 $$
 
 
@@ -96,8 +96,8 @@ $$
 
    
 $$
-A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, 
-   B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
+A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix},
+B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
 $$
 
 
@@ -130,7 +130,7 @@ Since the number of columns in $A$ (3) is equal to the number of rows in $B$ (3)
 
 
 $$
-C = A \times B = \begin{bmatrix} 
+C = A \times B = \begin{bmatrix}
 (1 \times 7 + 2 \times 9 + 3 \times 11) & (1 \times 8 + 2 \times 10 + 3 \times 12) \\
 (4 \times 7 + 5 \times 9 + 6 \times 11) & (4 \times 8 + 5 \times 10 + 6 \times 12)
 \end{bmatrix}
@@ -141,11 +141,11 @@ Calculating each element:
 
 
 $$
-C = \begin{bmatrix} 
+C = \begin{bmatrix}
 7 + 18 + 33 & 8 + 20 + 36 \\
 28 + 45 + 66 & 32 + 50 + 72
 \end{bmatrix}
-= \begin{bmatrix} 
+= \begin{bmatrix}
 58 & 64 \\
 139 & 154
 \end{bmatrix}
@@ -494,8 +494,8 @@ Let us consider the following vector and bases:
 
 
 $$
-\mathbf{v} = \begin{bmatrix} 5 \\ -1 \end{bmatrix}, \quad 
-\mathbf{b_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad 
+\mathbf{v} = \begin{bmatrix} 5 \\ -1 \end{bmatrix}, \quad
+\mathbf{b_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad
 \mathbf{b_2} = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 $$
 
@@ -663,9 +663,9 @@ A two-dimensional rotation matrix that rotates a vector by an angle $\theta$ is 
 
 
 $$
-R(\theta) = \begin{bmatrix} 
+R(\theta) = \begin{bmatrix}
 \cos\theta & -\sin\theta \\
-\sin\theta & \cos\theta 
+\sin\theta & \cos\theta
 \end{bmatrix}
 $$
 
@@ -674,9 +674,9 @@ When this matrix is multiplied by a vector $\mathbf{v} = \begin{bmatrix} x \\ y 
 
 
 $$
-\mathbf{v}' = R(\theta) \cdot \mathbf{v} = \begin{bmatrix} 
+\mathbf{v}' = R(\theta) \cdot \mathbf{v} = \begin{bmatrix}
 \cos\theta & -\sin\theta \\
-\sin\theta & \cos\theta 
+\sin\theta & \cos\theta
 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
 $$
 
@@ -685,9 +685,9 @@ This results in:
 
 
 $$
-\mathbf{v}' = \begin{bmatrix} 
+\mathbf{v}' = \begin{bmatrix}
 x\cos\theta - y\sin\theta \\
-x\sin\theta + y\cos\theta 
+x\sin\theta + y\cos\theta
 \end{bmatrix}
 $$
 
@@ -725,7 +725,7 @@ For example, given:
 
 
 $$
-A = \begin{bmatrix} 
+A = \begin{bmatrix}
 2 & 1 \\
 1 & 2
 \end{bmatrix}
@@ -761,12 +761,12 @@ $$
    
 $$
 \det \begin{bmatrix}
-   A & b \\
-   c & d
-   \end{bmatrix} - \begin{bmatrix}
-   \lambda & 0 \\
-   0 & \lambda
-   \end{bmatrix} = 0
+A & b \\
+c & d
+\end{bmatrix} - \begin{bmatrix}
+\lambda & 0 \\
+0 & \lambda
+\end{bmatrix} = 0
 $$
 
 
@@ -775,9 +775,9 @@ $$
    
 $$
 \det \begin{bmatrix}
-   A - \lambda & b \\
-   c & d - \lambda
-   \end{bmatrix} = 0
+A - \lambda & b \\
+c & d - \lambda
+\end{bmatrix} = 0
 $$
 
 
@@ -907,13 +907,13 @@ $$
 - Substituting $A = U\Sigma V^T$into$AA^T$, we have:
 
 $$
-\begin{aligned} 
+\begin{aligned}
 A A^T &= U\Sigma V^T (U \Sigma V^T)^T \\
 &= U \Sigma V^T V \Sigma^T U^T \\
 &= U \Sigma \Sigma^T U^T \\
 &= U \Lambda U^T \\
 &= U \Lambda U^{-1}
- \end{aligned}
+\end{aligned}
 $$
  
 i.e., $(AA^T) = U\Lambda U^{-1}$

@@ -1,31 +1,42 @@
 import re
+from pathlib import Path
 
-def clean_math_blocks(math_text):
-    # Case 1: If the double dollar block is indented, unindent it.
-    math_text = re.sub(r'^\s*\$\$(.*?)\$\$', r'$$\1$$', math_text, flags=re.DOTALL)
+def fix_math_blocks(text):
+    # Step 1 & 2: Normalize double dollar blocks
+    def normalize_double_dollars(match):
+        content = match.group(1)
+        # Remove extra line breaks and leading/trailing whitespace from each line
+        lines = content.strip().splitlines()
+        cleaned_lines = [line.strip() for line in lines if line.strip() != '']
+        return '$$\n' + '\n'.join(cleaned_lines) + '\n$$'
 
-    # Case 2: If double dollar does not occupy its own line, make it do so.
-    math_text = re.sub(r'\$\$(.*?)\$\$', r'\n$$\1$$\n', math_text, flags=re.DOTALL)
+    # First ensure all double-dollar blocks are isolated on their own lines
+    text = re.sub(r'\${2}\s*(.*?)\s*\${2}', lambda m: f'$$\n{m.group(1).strip()}\n$$', text, flags=re.DOTALL)
 
-    # Case 3: If there are spaces between single dollar sign and the math, remove them.
-    # Note: This won't interfere with spaces outside the math expressions
-    math_text = re.sub(r'(\$) (\S.*?) (\$)', r'\1\2\3', math_text)
+    # Then normalize their contents
+    text = re.sub(r'\$\$\n(.*?)\n\$\$', normalize_double_dollars, text, flags=re.DOTALL)
 
-    # Case 4: If there are extra line breaks inside the double dollar block, remove them.
-    math_text = re.sub(r'\$\$(.*?)\$\$', lambda m: '$$\n' + re.sub(r'\n+', '\n', m.group(1).strip()) + '\n$$', math_text, flags=re.DOTALL)
+    # Step 3: Normalize inline math spacing
+    def fix_inline_math(match):
+        inner = match.group(1)
+        return f'${inner.strip()}$'
 
-    return math_text
+    # Only modify spaces inside $...$ blocks, but avoid $$ blocks
+    text = re.sub(r'(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)', fix_inline_math, text)
+
+    return text
+
+def process_markdown_file(filepath):
+    path = Path(filepath)
+    original_text = path.read_text(encoding='utf-8')
+    fixed_text = fix_math_blocks(original_text)
+    path.write_text(fixed_text, encoding='utf-8')
+    print(f"Processed: {filepath}")
 
 # Example usage
 if __name__ == "__main__":
-    file = "Linear_Algebra_Notes.md"
-
-    with open(file, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    content = clean_math_blocks(content)
-
-    with open(file, "w", encoding="utf-8") as f:
-        f.write(content)
-
-    print(f"Fixed Markdown written to {file}.")
+    import sys
+    if len(sys.argv) < 2:
+        print("Usage: python fix_mathjax.py <markdown_file.md>")
+    else:
+        process_markdown_file(sys.argv[1])
