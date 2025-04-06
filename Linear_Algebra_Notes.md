@@ -692,16 +692,16 @@ In sum, the process for calculating eigenvalues is as follows:
 
 ---
 ## Matrix Diagonalization
-Given a symmetric matrix: $$ A = QSQ^T $$ where: $$ A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} $$ is a symmetric matrix. 
+Given a symmetric matrix: $A = QSQ^T$ where: $$A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}$$ is a symmetric matrix. 
 
 **1. Eigenvalue and Eigenvectors 
 
 The eigenvalues and corresponding eigenvectors are: 
 
- $$
- \lambda_1 = 1, \quad v_1 = \begin{bmatrix} 1 \\
-  1 \end{bmatrix}
- $$ 
+$$
+\lambda_1 = 1, \quad v_1 = \begin{bmatrix} 1 \\
+1 \end{bmatrix}
+$$ 
  
 $$
 \lambda_2 = 3, \quad v_2 = \begin{bmatrix} -1 \\ 
@@ -757,7 +757,7 @@ S = \begin{bmatrix} 3 & 0 \\
 0 & 1 \end{bmatrix} 
 $$ 
  
- Thus, the decomposition of $A$: $$ A = Q S Q^T $$ represents a simple scaling transformation with a diagonal matrix.
+ Thus, the decomposition of $A$:  $A = Q S Q^T$ represents a simple scaling transformation with a diagonal matrix.
 
 ## Singular Value Decomposition (SVD)
 
